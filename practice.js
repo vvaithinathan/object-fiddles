@@ -173,7 +173,7 @@ that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
 for (prop in user) {
-  if (prop === 'pwHash' && user[prop] != 'asdfasdfsdf') {
+  if (user[prop] == undefined || user[prop] == null || user[prop] == 0) {
     delete user[prop];
   }
 }
@@ -183,10 +183,8 @@ console.log(user);
   //Code Here
 
 for (prop in user) {
-  if (prop === 'age' && user[prop] === 0) {
-    user['name'] = 'your name';
-    user['username'] = 'your username';
-  }
+  user['name'] = 'your name';
+  user['username'] = 'your username';
 }
 console.log(user);
 
